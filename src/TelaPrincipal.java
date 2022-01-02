@@ -12,7 +12,7 @@ public class TelaPrincipal {
 
         this.janela = new JFrame("Jogo da Velha");
         this.janela.setBackground(Color.BLACK);
-        this.janela.setBounds(100, 100, 501, 515);
+        this.janela.setBounds(100, 100, 501, 525);
         this.janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.telaJogo = new TelaJogo();

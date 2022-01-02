@@ -1,10 +1,13 @@
 import java.util.Arrays;
 
+import javax.swing.JOptionPane;
+
 public class Tabuleiro {
     private Jogador jogador1;
     private Jogador jogador2;
     char[][] tabuleiro;
     private boolean vencedor;
+    private int cont = 0;
 
     public Tabuleiro(Jogador jogador1, Jogador jogador2){
         this.tabuleiro = new char[3][3];
@@ -15,32 +18,42 @@ public class Tabuleiro {
 
     public void realizaJogada(Jogador j, int linha, int coluna){
 
-        char simbolo = j.getSimbolo();
-        if(j.getSimbolo() == jogador1.getSimbolo()){
-            jogador1.setProximo(false);
-            jogador2.setProximo(true);
+        //char simbolo = j.getSimbolo();
+        if (this.tabuleiro[linha-1][coluna -1] == 'X' || this.tabuleiro[linha-1][coluna -1] == 'O'){
+            JOptionPane.showMessageDialog(null, "Posição ocupada, tente outra!", "Atenção!",
+            JOptionPane.ERROR_MESSAGE);
         }else{
-            jogador1.setProximo(true);
-            jogador2.setProximo(false);
+            char simbolo = j.getSimbolo();
+            if(j.getSimbolo() == jogador1.getSimbolo()){
+                jogador1.setProximo(false);
+                jogador2.setProximo(true);
+            }else{
+                jogador1.setProximo(true);
+                jogador2.setProximo(false);
+            }
+            this.tabuleiro[linha-1][coluna -1] = simbolo;
         }
         // Fazer verificação para evitar que dois jogadores
-        // joguen na mesma posição
+        // joguem na mesma posição
 
-        this.tabuleiro[linha-1][coluna -1] = simbolo;
+        //this.tabuleiro[linha-1][coluna -1] = simbolo;
     }
 
     public char verificaGanhador(Jogador j){
         char simbolo = j.getSimbolo();
+        
         if(tabuleiro[0][0] == simbolo &&
         tabuleiro[0][1] == simbolo &&
         tabuleiro[0][2] == simbolo){
             this.vencedor = true;
             return simbolo;
+
         }else if(tabuleiro[1][0] == simbolo &&
             tabuleiro[1][1] == simbolo &&
             tabuleiro[1][2] == simbolo){
                 this.vencedor = true;
                 return simbolo;
+
         }else if(tabuleiro[2][0] == simbolo &&
         tabuleiro[2][1] == simbolo &&
         tabuleiro[2][2] == simbolo){
@@ -58,6 +71,7 @@ public class Tabuleiro {
         tabuleiro[2][1] == simbolo){
             this.vencedor = true;
             return simbolo;
+
         }else if(tabuleiro[0][2] == simbolo &&
         tabuleiro[1][2] == simbolo &&
         tabuleiro[2][2] == simbolo){
@@ -74,13 +88,18 @@ public class Tabuleiro {
         tabuleiro[1][1] == simbolo &&
         tabuleiro[2][0] == simbolo){
             this.vencedor = true;
-            return simbolo;   
-        }
-        return ' ';
-     
-        
+            return simbolo;
 
-        // FALTA VERIFICAR PARA AS OUTRAS LINHAS, COLUNAS E DIAGONAIS
+        }else if((tabuleiro[0][0] == 'X' ||  tabuleiro[0][0] == 'O') && (tabuleiro[1][0] == 'X' || tabuleiro[1][0] == 'O') &&
+        (tabuleiro[2][0] == 'X' || tabuleiro[2][0] == 'O') && (tabuleiro[0][1] == 'X' || tabuleiro[0][1] == 'O') &&
+        (tabuleiro[0][2] == 'X' || tabuleiro[0][2] == 'O') && (tabuleiro[1][1] == 'X' || tabuleiro[1][1] == 'O') &&
+        (tabuleiro[2][2] == 'X' || tabuleiro[2][2] == 'O') && this.vencedor == false){
+
+            JOptionPane.showMessageDialog(null, "Jogo EMPATADO!", "Fim de Jogo!", JOptionPane.PLAIN_MESSAGE); 
+        }
+
+        return ' ';
+        // FALTA VERIFICAR PARA AS OUTRAS LINHAS, COLUNAS E DIAGONAIS ==> feito
     }
 
 

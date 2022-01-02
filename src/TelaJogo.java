@@ -33,7 +33,7 @@ public class TelaJogo extends JPanel{
 
     private void IniciarInterface(){
 
-        botao11 = this.configuraBotao("1,1", 0, 0);
+        botao11 = this.configuraBotao("1,1", 10, 10);
         botao11.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L1, C1");
@@ -46,7 +46,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao12 = this.configuraBotao("1,2", 165, 0);
+        botao12 = this.configuraBotao("1,2", 175, 10);
         botao12.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L1, C2");
@@ -59,7 +59,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao13 = this.configuraBotao("1,3", 329, 0);
+        botao13 = this.configuraBotao("1,3", 339, 10);
         botao13.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L1, C3");
@@ -72,7 +72,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao21 = this.configuraBotao("2,1", 0, 160);
+        botao21 = this.configuraBotao("2,1", 10, 170);
         botao21.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L2, C1");
@@ -85,7 +85,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao22 = this.configuraBotao("2,2", 165, 160);
+        botao22 = this.configuraBotao("2,2", 175, 170);
         botao22.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L2, C2");
@@ -98,7 +98,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao23 = this.configuraBotao("2,3", 329, 160);
+        botao23 = this.configuraBotao("2,3", 339, 170);
         botao23.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L2, C3");
@@ -111,7 +111,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao31 = this.configuraBotao("3,1", 0, 320);
+        botao31 = this.configuraBotao("3,1", 10, 330);
         botao31.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L3, C1");
@@ -124,7 +124,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao32 = this.configuraBotao("3,2", 165, 320);
+        botao32 = this.configuraBotao("3,2", 175, 330);
         botao32.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L3, C2");
@@ -137,7 +137,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-        botao33 = this.configuraBotao("3,3", 329, 320);
+        botao33 = this.configuraBotao("3,3", 339, 330);
         botao33.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 System.out.println("Botao L3, C3");
@@ -168,12 +168,12 @@ public class TelaJogo extends JPanel{
 
         JButton botao = new JButton(legendabotao);
         botao.setBackground(Color.WHITE);
-        botao.setBounds(posicaoX, posicaoY, 155, 155);
+        botao.setBounds(posicaoX, posicaoY, 145, 145);
         return botao;
     }
 
     private Jogador verificaJogadorRodada(){
-
+       
         if(this.jog1.isProximo()){
             return this.jog1;
         }else{
@@ -182,7 +182,6 @@ public class TelaJogo extends JPanel{
     }
 
     private Jogador jogada(int linha, int coluna){
-
         String msg = "";
         char simbolo = ' ';
         Jogador JogadorVez = this.verificaJogadorRodada();

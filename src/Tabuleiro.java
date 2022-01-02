@@ -36,9 +36,49 @@ public class Tabuleiro {
         tabuleiro[0][2] == simbolo){
             this.vencedor = true;
             return simbolo;
+        }else if(tabuleiro[1][0] == simbolo &&
+            tabuleiro[1][1] == simbolo &&
+            tabuleiro[1][2] == simbolo){
+                this.vencedor = true;
+                return simbolo;
+        }else if(tabuleiro[2][0] == simbolo &&
+        tabuleiro[2][1] == simbolo &&
+        tabuleiro[2][2] == simbolo){
+            this.vencedor = true;
+            return simbolo;
 
+        }else if(tabuleiro[0][0] == simbolo &&
+        tabuleiro[1][0] == simbolo &&
+        tabuleiro[2][0] == simbolo){
+            this.vencedor = true;
+            return simbolo;
+
+        }else if(tabuleiro[0][1] == simbolo &&
+        tabuleiro[1][1] == simbolo &&
+        tabuleiro[2][1] == simbolo){
+            this.vencedor = true;
+            return simbolo;
+        }else if(tabuleiro[0][2] == simbolo &&
+        tabuleiro[1][2] == simbolo &&
+        tabuleiro[2][2] == simbolo){
+            this.vencedor = true;
+            return simbolo;
+        
+        }else if(tabuleiro[0][0] == simbolo &&
+        tabuleiro[1][1] == simbolo &&
+        tabuleiro[2][2] == simbolo){
+            this.vencedor = true;
+            return simbolo;
+        
+        }else if(tabuleiro[0][2] == simbolo &&
+        tabuleiro[1][1] == simbolo &&
+        tabuleiro[2][0] == simbolo){
+            this.vencedor = true;
+            return simbolo;   
         }
         return ' ';
+     
+        
 
         // FALTA VERIFICAR PARA AS OUTRAS LINHAS, COLUNAS E DIAGONAIS
     }

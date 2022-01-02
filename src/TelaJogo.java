@@ -150,9 +150,7 @@ public class TelaJogo extends JPanel{
             }
         });
 
-
-
-        /// até botão 33
+        /// até botão 33 >> feito!
 
         this.add(botao11);
         this.add(botao12);

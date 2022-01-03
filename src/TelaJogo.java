@@ -1,9 +1,13 @@
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 
 public class TelaJogo extends JPanel{
 
@@ -20,6 +24,7 @@ public class TelaJogo extends JPanel{
     Jogador jog2;
     Tabuleiro tabuleiro;
     Jogador JogadordaVez;
+    
 
     public TelaJogo(){
         this.setLayout(null);
@@ -41,7 +46,10 @@ public class TelaJogo extends JPanel{
                     int linha =1;
                     int coluna = 1;
                     JogadordaVez = jogada(linha, coluna);
-                    botao11.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao11.setText(""+JogadordaVez.getSimbolo());
+                    }
+                    
                 }
             }
         });
@@ -54,7 +62,9 @@ public class TelaJogo extends JPanel{
                     int linha =1;
                     int coluna = 2;
                     JogadordaVez = jogada(linha, coluna);
-                    botao12.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao12.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -67,7 +77,9 @@ public class TelaJogo extends JPanel{
                     int linha =1;
                     int coluna = 3;
                     JogadordaVez = jogada(linha, coluna);
-                    botao13.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao13.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -80,7 +92,9 @@ public class TelaJogo extends JPanel{
                     int linha =2;
                     int coluna = 1;
                     JogadordaVez = jogada(linha, coluna);
-                    botao21.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao21.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -93,7 +107,9 @@ public class TelaJogo extends JPanel{
                     int linha =2;
                     int coluna = 2;
                     JogadordaVez = jogada(linha, coluna);
-                    botao22.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao22.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -106,7 +122,9 @@ public class TelaJogo extends JPanel{
                     int linha =2;
                     int coluna = 3;
                     JogadordaVez = jogada(linha, coluna);
-                    botao23.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao23.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -119,7 +137,9 @@ public class TelaJogo extends JPanel{
                     int linha =3;
                     int coluna = 1;
                     JogadordaVez = jogada(linha, coluna);
-                    botao31.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao31.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -132,7 +152,9 @@ public class TelaJogo extends JPanel{
                     int linha =3;
                     int coluna = 2;
                     JogadordaVez = jogada(linha, coluna);
-                    botao32.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao32.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -145,7 +167,9 @@ public class TelaJogo extends JPanel{
                     int linha =3;
                     int coluna = 3;
                     JogadordaVez = jogada(linha, coluna);
-                    botao33.setText(""+JogadordaVez.getSimbolo());
+                    if(JogadordaVez != null){
+                        botao33.setText(""+JogadordaVez.getSimbolo());
+                    }
                 }
             }
         });
@@ -173,7 +197,7 @@ public class TelaJogo extends JPanel{
     }
 
     private Jogador verificaJogadorRodada(){
-       
+
         if(this.jog1.isProximo()){
             return this.jog1;
         }else{
